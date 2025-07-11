@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { registerUser } from '../services/api';
+import { registerUser } from '../services/api'; // Adjust the import path as necessary
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
