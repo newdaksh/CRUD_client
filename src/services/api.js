@@ -1,11 +1,7 @@
 import axios from "axios";
-import process from "process";
-
-// Define the backend URL based on environment variables or global variables
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const api = axios.create({
-  baseURL: BACKEND_URL,
+  baseURL: "https://crud-server-ilsq.onrender.com", // Use the backend URL defined above
 });
 
 // Interceptor to attach token automatically
