@@ -1,10 +1,9 @@
 import axios from "axios";
 
-// Use import.meta.env for Vite or fallback to window._env_ for other setups
+// Define the backend URL based on environment variables or global variables
 const BACKEND_URL =
   (typeof import.meta !== "undefined" && import.meta.env && import.meta.env.VITE_REACT_APP_BACKEND_URL) ||
-  window.REACT_APP_BACKEND_URL ||
-  "https://crud-server-ilsq.onrender.com";
+  window.REACT_APP_BACKEND_URL;
 
 const api = axios.create({
   baseURL: BACKEND_URL,
