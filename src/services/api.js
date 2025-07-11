@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const api = "https://crud-server-ilsq.onrender.com";
+const api = axios.create({
+  baseURL: "https://crud-server-lisq.onrender.com",
+});
 
 // Interceptor to attach token automatically
 api.interceptors.request.use((config) => {
