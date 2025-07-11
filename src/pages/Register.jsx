@@ -16,8 +16,6 @@ const Register = () => {
     country: '',
     resume: '' // You might want to handle file uploads separately
   });
-  const [message, setMessage] = useState('');
-  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -31,8 +29,6 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setMessage('');
-    setError('');
     setLoading(true);
     try {
       // Use FormData for file upload
