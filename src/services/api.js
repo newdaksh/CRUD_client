@@ -14,28 +14,29 @@ api.interceptors.request.use((config) => {
 });
 
 // ✅ Register user (with FormData)
-export const registerUserWithFormData = async (formInput) => {
+export const registerUserWithFormData = async (formValues) => {
   try {
     const formData = new FormData();
-    for (const key in formInput) {
-      formData.append(key, formInput[key]);
-    }
+    Object.entries(formValues).forEach(([key, value]) => {
+      formData.append(key, value);
+    });
 
     const response = await api.post('/register', formData, {
       headers: {
-        "Content-Type": "multipart/form-data",
+        'Content-Type': 'multipart/form-data',
       },
     });
 
     return response.data;
   } catch (error) {
-    console.error("Registration error:", error); // optional
+    console.error("Registration error:", error);
     if (error.response?.data?.error) {
       throw { error: error.response.data.error };
     }
     throw { error: error.message || "Registration failed" };
   }
 };
+
 
 // ✅ Login user
 export const loginUser = async (loginData) => {
