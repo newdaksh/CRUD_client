@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "http://localhost:5000",
+    baseURL: "https://crud-server-ilsg.onrender.com/api", // Replace with your actual API base URL
 });
 
 // Interceptor to attach token automatically
