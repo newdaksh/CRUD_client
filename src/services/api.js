@@ -1,11 +1,8 @@
 import axios from "axios";
-import REACT_APP_BACKEND_URL from "../.env";
+import process from "process";
 
 // Define the backend URL based on environment variables or global variables
-const BACKEND_URL =
-  (typeof import.meta !== "undefined" && import.meta.env && import.meta.env.VITE_REACT_APP_BACKEND_URL) ||
-  window.REACT_APP_BACKEND_URL ||
-  REACT_APP_BACKEND_URL;
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const api = axios.create({
   baseURL: BACKEND_URL,
