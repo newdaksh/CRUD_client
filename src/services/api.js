@@ -1,7 +1,13 @@
 import axios from "axios";
 
+// Use import.meta.env for Vite or fallback to window._env_ for other setups
+const BACKEND_URL =
+  (typeof import.meta !== "undefined" && import.meta.env && import.meta.env.VITE_REACT_APP_BACKEND_URL) ||
+  window.REACT_APP_BACKEND_URL ||
+  "https://crud-server-ilsq.onrender.com";
+
 const api = axios.create({
-  baseURL: "https://crud-server-lisq.onrender.com",
+  baseURL: BACKEND_URL,
 });
 
 // Interceptor to attach token automatically
