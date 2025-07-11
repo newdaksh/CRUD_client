@@ -1,8 +1,6 @@
 import axios from "axios";
 
-const api = axios.create({
-    baseURL: "https://crud-server-ilsg.onrender.com/api", // Replace with your actual API base URL
-});
+const api = "https://crud-server-ilsq.onrender.com";
 
 // Interceptor to attach token automatically
 api.interceptors.request.use((config) => {
@@ -13,18 +11,45 @@ api.interceptors.request.use((config) => {
     return config;
   });
 
-// Register user API call
-export const registerUser = async (userData) => {
+// Register user with FormData (for file uploads or multipart data)
+export const registerUserWithFormData = async (userData) => {
   try {
-    const response = await api.post('/register', userData);
+    const formData = new FormData();
+    for (const key in userData) {
+      formData.append(key, userData[key]);
+    }
+    const response = await axios.post(
+      "https://crud-server-ilsq.onrender.com/register",
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
     return response.data;
   } catch (error) {
     if (error.response && error.response.data && error.response.data.error) {
       throw { error: error.response.data.error };
     }
-    throw { error: error.message || 'Registration failed' };
+    throw { error: error.message || "Registration failed" };
   }
 };
+
+
+
+
+// export const registerUser = async (userData) => {
+//   try {
+//     const response = await api.post('/register', userData);
+//     return response.data;
+//   } catch (error) {
+//     if (error.response && error.response.data && error.response.data.error) {
+//       throw { error: error.response.data.error };
+//     }
+//     throw { error: error.message || 'Registration failed' };
+//   }
+// };
 
 // Login user API call
 export const loginUser = async (loginData) => {
