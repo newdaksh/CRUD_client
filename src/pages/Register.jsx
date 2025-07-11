@@ -118,7 +118,7 @@ const Register = () => {
         </select>
         <div>
           <label className="font-medium">Resume:</label><br />
-          <input type="file" name="resume" accept=".pdf,.doc,.docx" onChange={handleFileChange} required className="w-full mt-1" />
+          <input type="file" name="resume" accept=".pdf,.doc,.docx" onChange={handleFileChange} className="w-full mt-1" />
         </div>
         <button type="submit" disabled={loading} className="w-full py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
           {loading ? 'Registering...' : 'Register'}
