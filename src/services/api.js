@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://crud-server-ilsq.onrender.com", // ✅ Your backend URL
+  baseURL: "https://crud-server-ilsg.onrender.com", // ✅ Your backend URL
 });
 
 // ✅ Attach token to all requests
