@@ -12,11 +12,11 @@ api.interceptors.request.use((config) => {
   });
 
 // Register user with FormData (for file uploads or multipart data)
-export const registerUserWithFormData = async (userData) => {
+export const registerUserWithFormData = async (FormData) => {
   try {
     const formData = new FormData();
-    for (const key in userData) {
-      formData.append(key, userData[key]);
+    for (const key in FormData) {
+      formData.append(key, FormData[key]);
     }
     const response = await axios.post(
       "https://crud-server-ilsq.onrender.com/register",

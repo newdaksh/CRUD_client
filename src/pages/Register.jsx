@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { registerUser } from '../services/api'; // Adjust the import path as necessary
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { registerUserWithFormData } from '../services/api';
 
 
 const Register = () => {
@@ -36,7 +36,7 @@ const Register = () => {
       Object.entries(form).forEach(([key, value]) => {
         formData.append(key, value);
       });
-      const res = await registerUser(formData);
+      const res = await registerUserWithFormData(formData);
       toast.success(res.message || 'Registration successful!', { position: 'top-center' });
       setForm({
         firstName: '', lastName: '', email: '', password: '', mobile: '', gender: '', languages: '', country: '', resume: ''
