@@ -53,12 +53,12 @@ const Register = () => {
         <h2 className="text-3xl font-bold text-center text-indigo-700 mb-6">Create Account</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input name="firstName" placeholder="First Name" value={form.firstName} onChange={handleChange} required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" />
-            <input name="lastName" placeholder="Last Name" value={form.lastName} onChange={handleChange} required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+            <input name="firstName" placeholder="First Name" value={form.firstName} onChange={handleChange}  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+            <input name="lastName" placeholder="Last Name" value={form.lastName} onChange={handleChange}  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" />
           </div>
-          <input name="email" type="email" placeholder="Email" value={form.email} onChange={handleChange} required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" />
-          <input name="password" type="password" placeholder="Password" value={form.password} onChange={handleChange} required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" />
-          <input name="mobile" placeholder="Mobile" value={form.mobile} onChange={handleChange} required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+          <input name="email" type="email" placeholder="Email" value={form.email} onChange={handleChange}  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+          <input name="password" type="password" placeholder="Password" value={form.password} onChange={handleChange}  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+          <input name="mobile" placeholder="Mobile" value={form.mobile} onChange={handleChange}  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" />
         <div>
           <label className="font-medium">Gender:</label><br />
           <label>
@@ -68,7 +68,7 @@ const Register = () => {
               value="male"
               checked={form.gender === 'male'}
               onChange={handleChange}
-              required
+              
             /> Male
           </label>
           {' '}
@@ -79,7 +79,7 @@ const Register = () => {
               value="female"
               checked={form.gender === 'female'}
               onChange={handleChange}
-              required
+              
             /> Female
           </label>
           {' '}
@@ -90,18 +90,18 @@ const Register = () => {
               value="other"
               checked={form.gender === 'other'}
               onChange={handleChange}
-              required
+              
             /> Other
           </label>
         </div>
-        <select name="languages" value={form.languages} onChange={handleChange} required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
+        <select name="languages" value={form.languages} onChange={handleChange}  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
           <option value="">Select Language</option>
           <option value="c">C</option>
           <option value="laravel">Laravel</option>
           <option value="node">Node</option>
           <option value="express">Express</option>
         </select>
-        <select name="country" value={form.country} onChange={handleChange} required className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
+        <select name="country" value={form.country} onChange={handleChange} className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
           <option value="">Select Country</option>
           <option value="India">India</option>
           <option value="USA">USA</option>
@@ -117,7 +117,7 @@ const Register = () => {
           <label className="font-medium">Resume:</label><br />
           <input type="file" name="resume" accept=".pdf,.doc,.docx" onChange={handleFileChange} className="w-full mt-1" />
         </div>
-        
+
         <button type="submit" disabled={loading} className="w-full py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
           {loading ? 'Registering...' : 'Register'}
         </button>
