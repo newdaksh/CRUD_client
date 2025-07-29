@@ -5,9 +5,9 @@ const Navbar = () => (
   <>
     <nav className="flex justify-between p-4 bg-violet-300">
       
-      <Link to="/logout" 
-      className="mr-4 font-semibold text-blue-800"
-      ><button className="hover:cursor-pointer px-2 py-2 rounded-xl"><LogoutButton /></button></Link>
+      <div className="mr-4 font-semibold text-blue-800">
+        <LogoutButton />
+      </div>
       
       <Link to="/login" 
       className="mr-4 font-semibold text-blue-800"

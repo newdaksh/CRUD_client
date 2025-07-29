@@ -18,7 +18,7 @@ const LogoutButton = () => {
       theme: 'colored',
     });
     setTimeout(() => {
-      // navigate("/login");
+      navigate("/login");
     }, 4000);
   };
 
@@ -26,7 +26,7 @@ const LogoutButton = () => {
     <>
       <button
         onClick={handleLogout}
-        className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+        className="hover:cursor-pointer px-2 py-2 bg-red-500 text-white rounded-xl hover:bg-red-600 transition"
       >
         Logout
       </button>

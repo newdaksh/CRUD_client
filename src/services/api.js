@@ -1,7 +1,8 @@
 import axios from "axios";
 
+// Set your API URL - use environment variable or fallback to local server
 const api = axios.create({
-  baseURL: "https://crud-server-ilsg.onrender.com", // ✅ Your backend URL
+  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000",
 });
 
 // ✅ Attach token to all requests
